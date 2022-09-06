@@ -1,3 +1,4 @@
+// Toggle nav menu
 const navTogglerBtn = document.getElementById("nav-toggler");
 const navigationMenu = document.getElementById("navigation");
 
@@ -6,6 +7,7 @@ navTogglerBtn.addEventListener("click", (e) => {
     navigationMenu.classList.toggle("show");
 });
 
+// Hide nav menu on click outside
 document.addEventListener("mouseup", (e) => {
     let el = e.target.closest("#nav-toggler");
     let el2 = e.target.closest("#navigation");
@@ -15,6 +17,7 @@ document.addEventListener("mouseup", (e) => {
     }
 });
 
+// Slider
 var slider = tns({
     container: ".review-container",
     items: 1,
@@ -33,3 +36,25 @@ var slider = tns({
   </svg>`,
     ],
 });
+
+// Accordion
+function initAcc(elem, option) {
+    document.addEventListener("click", function (e) {
+        if (!e.target.matches(elem + " .accordion-btn")) return;
+        else {
+            if (!e.target.parentElement.classList.contains("active")) {
+                if (option == true) {
+                    var elementList = document.querySelectorAll(elem + " .accordion-item");
+                    Array.prototype.forEach.call(elementList, function (e) {
+                        e.classList.remove("active");
+                    });
+                }
+                e.target.parentElement.classList.add("active");
+            } else {
+                e.target.parentElement.classList.remove("active");
+            }
+        }
+    });
+}
+
+initAcc(".accordion", true);

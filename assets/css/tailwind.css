@@ -24,6 +24,11 @@
     background: linear-gradient(135deg, #e3f9ff 0%, #f4f4ff 100%);
 }
 
+.cta-section {
+    background: linear-gradient(178.27deg, #2e236a 7.31%, #03216c 96.98%);
+}
+
+/* Slider */
 .tns-outer {
     @apply relative;
 }
@@ -53,3 +58,30 @@
 .tns-nav button.tns-nav-active {
     @apply bg-primary-dark;
 }
+
+/* Accordion */
+.accordion {
+    @apply grid gap-4;
+}
+.accordion .accordion-item {
+    @apply rounded-lg border border-slate-200 bg-slate-100 transition;
+}
+.accordion .accordion-item.active {
+    @apply shadow-md shadow-slate-200;
+}
+.accordion .accordion-btn {
+    @apply relative flex w-full items-center justify-between py-3 px-6 text-left text-xl font-semibold md:text-2xl;
+}
+.accordion .accordion-btn span {
+    @apply relative block h-5 w-5 before:absolute before:top-1/2 before:h-[3px] before:w-full before:rotate-90 before:transform before:rounded before:bg-primary-dark before:transition before:content-[''] after:absolute after:top-1/2 after:h-[3px] after:w-full after:rounded after:bg-primary-dark after:content-[''];
+}
+.accordion .accordion-panel {
+    @apply h-auto max-h-0 overflow-hidden p-0 opacity-0 transition md:text-lg;
+}
+.accordion .accordion-item.active .accordion-btn span::before {
+    @apply rotate-0;
+}
+.accordion .accordion-item.active .accordion-panel {
+    @apply max-h-screen px-6 pb-5 opacity-100;
+}
+
