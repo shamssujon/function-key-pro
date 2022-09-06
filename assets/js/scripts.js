@@ -58,3 +58,10 @@ function initAcc(elem, option) {
 }
 
 initAcc(".accordion", true);
+
+// AOS
+AOS.init({
+    disable: 'phone',
+    delay: 50,
+    once: true,
+});
