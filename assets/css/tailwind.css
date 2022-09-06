@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.menu-opened span:first-child {
+    @apply w-9 -rotate-45;
+}
+.menu-opened span:last-child {
+    @apply w-9 rotate-45;
+}
+.menu-opened span:nth-child(2) {
+    @apply w-0 opacity-0;
+}
+
+.navigation.show {
+    @apply visible scale-y-100 opacity-100;
+}
+
+.hero-section {
+    background: linear-gradient(360deg, #ffffff 4.1%, #f5fdff 100%);
+}
+
+.review-section {
+    background: linear-gradient(135deg, #e3f9ff 0%, #f4f4ff 100%);
+}
+
+.tns-outer {
+    @apply relative;
+}
+
+.tns-controls button {
+    @apply absolute top-1/2 z-10 -translate-y-1/2 transform;
+}
+
+.tns-controls button svg {
+    @apply h-10 w-10;
+}
+
+.tns-controls button[data-controls="prev"] {
+    @apply left-2 md:left-4;
+}
+
+.tns-controls button[data-controls="next"] {
+    @apply right-2 md:right-4;
+}
+
+.tns-nav {
+    @apply absolute -bottom-4 left-0 right-0 flex items-center justify-center gap-2;
+}
+.tns-nav button {
+    @apply h-2 w-2 rounded-full bg-primary-dark/40;
+}
+.tns-nav button.tns-nav-active {
+    @apply bg-primary-dark;
+}

@@ -1,3 +1,4 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: ["./*.{html,js}"],
@@ -12,7 +13,17 @@ module.exports = {
             center: true,
             padding: "1.25rem",
         },
-        extend: {},
+        extend: {
+            colors: {
+                primary: {
+                    DEFAULT: "#2E84FF",
+                    dark: "#262B62",
+                },
+            },
+            fontFamily: {
+                sans: ["Kanit", ...defaultTheme.fontFamily.sans],
+            },
+        },
     },
     plugins: [],
 };
