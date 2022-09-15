@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!-- Favicon -->
-        <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+        <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
 
         <!-- Title -->
         <title>Function Key Pro</title>
@@ -138,9 +138,14 @@
                             >
                             <a
                                 href="#"
-                                class="button button-primary inline-flex rounded-xl border border-solid border-primary-dark/30 px-12 py-5 text-xl font-medium text-primary-dark transition hover:border-primary-dark active:border-primary-dark/30"
-                                >Try Out Now</a
-                            >
+                                class="button button-primary group relative inline-flex rounded-xl border border-solid border-primary-dark/30 px-12 py-5 text-xl font-medium text-primary-dark transition hover:border-primary-dark active:border-primary-dark/30"
+                                >Try Out Now
+                                <span
+                                    class="invisible absolute top-[115%] left-1/2 inline-block -translate-x-1/2 transform whitespace-nowrap rounded bg-primary-dark py-1 px-3 text-center text-sm font-normal text-white opacity-0 transition before:absolute before:bottom-full before:left-1/2 before:-translate-x-1/2 before:border-8 before:border-solid before:border-transparent before:border-b-primary-dark before:content-[''] group-hover:visible group-hover:opacity-100"
+                                >
+                                    $6.99, one-time payment
+                                </span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -168,10 +173,45 @@
                                 workflow.
                             </p>
                         </div>
-                        <div class="mt-8 aspect-video" data-aos="fade-up-sm" data-aos-delay="150">
-                            <video class="h-auto w-full cursor-pointer rounded-3xl" controls>
+                        <div
+                            class="group relative mt-8 aspect-video"
+                            data-aos="fade-up-sm"
+                            data-aos-delay="150"
+                        >
+                            <video
+                                id="video"
+                                class="h-auto w-full cursor-pointer rounded-3xl"
+                                controls
+                            >
                                 <source src="assets/media/FunctionKeyPro.mp4" type="video/mp4" />
                             </video>
+                            <div
+                                id="video-thumbnail"
+                                class="absolute inset-0 flex items-center justify-center overflow-hidden rounded-3xl transition"
+                            >
+                                <img
+                                    src="assets/img/feature-img-2.png"
+                                    alt=""
+                                    class="h-full w-full object-cover"
+                                />
+
+                                <button
+                                    id="video-play-button"
+                                    type="button"
+                                    class="absolute top-1/2 left-1/2 z-10 h-24 w-24 -translate-x-1/2 -translate-y-1/2 transform"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="currentColor"
+                                        class="h-full w-full rounded-full bg-white p-1 text-primary shadow-xl group-hover:animate-none motion-safe:animate-scale"
+                                        viewBox="0 0 16 16"
+                                    >
+                                        <path
+                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
                         <div
                             data-aos="fade-up-sm"

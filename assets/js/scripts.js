@@ -61,7 +61,30 @@ initAcc(".accordion", true);
 
 // AOS
 AOS.init({
-    disable: 'phone',
+    disable: "phone",
     delay: 50,
     once: true,
+});
+
+// Video play button
+const videoPlayButton = document.getElementById("video-play-button");
+const video = document.getElementById("video");
+const videoThumbnail = document.getElementById("video-thumbnail");
+
+videoPlayButton.addEventListener("click", () => {
+    if (video.paused == true) {
+        video.play();
+        videoThumbnail.classList.remove("flex");
+        videoThumbnail.classList.add("hidden");
+    } else {
+        video.pause();
+        videoThumbnail.classList.add("flex");
+        videoThumbnail.classList.remove("hidden");
+    }
+});
+
+// Show thumbnail again when video finished playing
+video.addEventListener("ended", () => {
+    videoThumbnail.classList.add("flex");
+    videoThumbnail.classList.remove("hidden");
 });

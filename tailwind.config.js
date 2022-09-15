@@ -23,6 +23,15 @@ module.exports = {
             fontFamily: {
                 sans: ["Kanit", ...defaultTheme.fontFamily.sans],
             },
+            animation: {
+                scale: "scale 1s linear infinite",
+            },
+            keyframes: {
+                scale: {
+                    "0%, 100%": { transform: "scale(1)" },
+                    "50%": { transform: "scale(1.1)" },
+                },
+            },
         },
     },
     plugins: [],
